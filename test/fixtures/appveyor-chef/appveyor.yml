@@ -1,0 +1,9 @@
+version: 1.0.{build}
+build:
+  parallel: true
+  publish_wap: true
+  project: Source/PsmArchive/PsmArchive.sln
+  verbosity: minimal
+branches:
+  only:
+    - master
