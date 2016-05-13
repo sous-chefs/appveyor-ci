@@ -24,13 +24,10 @@ property :build_version, String, name_property: true
 property :api_token, String, required: true
 property :project_slug, String, required: true
 
-require 'HTTParty'
-require 'json'
-require 'chef/log'
-
-
-
 def start_deploy(api_token)
+  require 'httparty'
+  require 'json'
+
   body = {
     environmentName: environment_name,
     accountName: account_name,
@@ -43,20 +40,9 @@ def start_deploy(api_token)
                                       'Content-Type' => 'application/json',
                                       'Accept' => 'application/json'
                                       })
-
 end
 
 action :create do
-  # load_current_value do
-  #   if File.exist?('/var/www/html/index.html')
-  #     homepage IO.read('/var/www/html/index.html')
-  #   end
-  #   if File.exist?('/var/www/html/404.html')
-  #     page_not_found IO.read('/var/www/html/404.html')
-  #   end
-  # end
   chef_gem 'httparty'
-
   start_deploy(api_token)
-
 end

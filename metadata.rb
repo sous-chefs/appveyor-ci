@@ -7,3 +7,5 @@ long_description 'Installs AppVeyor Agent & Triggers Deployment'
 version '0.1.1'
 
 depends 'windows'
+
+gem 'httparty'
