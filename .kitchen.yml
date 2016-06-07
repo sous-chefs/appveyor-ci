@@ -21,12 +21,28 @@ suites:
       - recipe[appveyor-agent-latest::default]
     attributes:
       environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
-  - name: appveyor-deploy
+  - name: appveyor-deploy-latest
     run_list:
       - recipe[appveyor-deploy::default]
     attributes:
       api_token: <%= ENV['API_TOKEN'] %>
       environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
-      environment_name: <%= ENV['ENV_NAME'] %>
-      project_slug: <%= ENV['PROJECT_SLUG'] %>
-      account_name: <%= ENV['ACCOUNT_NAME'] %>
+      project: <%= ENV['PROJECT'] %>
+      account: <%= ENV['ACCOUNT'] %>
+  - name: appveyor-deploy-last-success
+    run_list:
+      - recipe[appveyor-deploy::default]
+    attributes:
+      api_token: <%= ENV['API_TOKEN'] %>
+      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
+      project: <%= ENV['PROJECT'] %>
+      account: <%= ENV['ACCOUNT'] %>
+  - name: appveyor-deploy-build-version
+    run_list:
+      - recipe[appveyor-deploy::default]
+    attributes:
+      api_token: <%= ENV['API_TOKEN'] %>
+      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
+      project: <%= ENV['PROJECT'] %>
+      account: <%= ENV['ACCOUNT'] %>
+      buildversion: <%= ENV['BUILDVERSION'] %>

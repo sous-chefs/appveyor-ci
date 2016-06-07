@@ -24,18 +24,23 @@ property :deployment_group, required: true
 property :installer_url, String, default: lazy { "http://www.appveyor.com/downloads/deployment-agent/#{version}/AppveyorDeploymentAgent.msi" }
 property :install_path, String, default: lazy { 'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe' }
 
-action :create do
+default_action :install
+
+action :install do
   include_recipe 'windows'
 
-  package 'AppveyorDeploymentAgent' do
+  windows_package 'AppveyorDeploymentAgent' do
     source installer_url
     installer_type :msi
     options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{access_key}"
+    not_if { ::File.exist?(install_path) }
   end
 
   registry_key 'HKEY_LOCAL_MACHINE\\SOFTWARE\\AppVeyor\\DeploymentAgent' do
     values [{
-      name: 'DeploymentGroup', type: :string, data: deployment_group
+      name: 'DeploymentGroup',
+      type: :string,
+      data: deployment_group
     }]
     action :create
   end
