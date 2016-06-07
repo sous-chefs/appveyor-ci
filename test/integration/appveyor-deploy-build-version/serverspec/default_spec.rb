@@ -12,5 +12,5 @@ describe service('W3SVC') do
 end
 
 describe service('Appveyor.DeploymentAgent') do
-  it {should be_running}
+  it { should be_running }
 end
