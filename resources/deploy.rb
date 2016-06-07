@@ -96,7 +96,7 @@ action_class do
       headers: { 'Authorization' => "Bearer #{api_token}" })
     response = false
     projects.each do |proj|
-      response = proj['name'] == project ? true : false
+      response = true if proj['name'] == project
     end
     raise "Unable to find the project #{project}" unless response == true
     project
@@ -108,7 +108,7 @@ action_class do
       headers: { 'Authorization' => "Bearer #{api_token}" })
     response = false
     environments.each do |env|
-      response = env['name'] == name ? true : false
+      response = true if env['name'] == name
     end
     raise "Unable to find the environment #{name}" unless response == true
     name
@@ -119,7 +119,7 @@ action_class do
       $environmentsapi,
       headers: { 'Authorization' => "Bearer #{api_token}" }) if env_by_name
     environments.each do |env|
-      return env['deploymentEnvironmentId']
+      return env['deploymentEnvironmentId'] if env['name'] == name
     end
   end
 
@@ -137,6 +137,7 @@ end
 # rubocop:enable GlobalVars
 
 action :start do
+  chef_gem 'httparty'
   if start_deploy == 200
     Chef::Log.info 'Converged successfully'
   else
