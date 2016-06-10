@@ -32,8 +32,6 @@ $environmentsapi = 'https://ci.appveyor.com/api/environments'
 $deploymentsapi = 'https://ci.appveyor.com/api/deployments'
 
 action_class do
-  require 'httparty'
-  require 'json'
   def start_deploy_body
     body = '{
         "environmentName": "environmentName",
@@ -138,6 +136,8 @@ end
 
 action :start do
   chef_gem 'httparty'
+  require 'httparty'
+  require 'json'
   if start_deploy == 200
     Chef::Log.info 'Converged successfully'
   else
