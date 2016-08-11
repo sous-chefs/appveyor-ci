@@ -31,7 +31,6 @@ action :install do
 
   package 'AppveyorDeploymentAgent' do
     source installer_url
-    installer_type :msi
     options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{access_key}"
     not_if { ::File.exist?(install_path) }
   end
