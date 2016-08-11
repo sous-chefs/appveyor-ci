@@ -29,7 +29,7 @@ default_action :install
 action :install do
   include_recipe 'windows'
 
-  windows_package 'AppveyorDeploymentAgent' do
+  package 'AppveyorDeploymentAgent' do
     source installer_url
     installer_type :msi
     options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{access_key}"
