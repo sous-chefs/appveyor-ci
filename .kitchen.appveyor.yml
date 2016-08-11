@@ -26,7 +26,7 @@ suites:
       api_token: <%= ENV['API_TOKEN'] %>
   - name: appveyor-deploy-build-version
     run_list:
-      - recipe[appveyor-deploy::default]
+      - recipe[appveyor-deploy-latest::default]
     attributes:
       api_token: <%= ENV['API_TOKEN'] %>
       environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
