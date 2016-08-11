@@ -6,8 +6,8 @@ environment:
   winrm_user: test_user
   winrm_pass: Pass@word1
   winrm_port: 5985
-  KITCHEN_YAML: c:\GitHub\link-chef\.kitchen.appveyor.yml
-  SSL_CERT_FILE: c:\GitHub\link-chef\certs.pem
+  KITCHEN_YAML: c:\GitHub\chef-appveyor-ci\.kitchen.appveyor.yml
+  SSL_CERT_FILE: c:\GitHub\chef-appveyor-ci\certs.pem
   appveyor_access_key: thisisnotakey
   user_password: Pass@word1
 
@@ -23,7 +23,7 @@ install:
   - ps: $env:PATH="C:\Ruby$env:ruby_version\bin;$env:PATH"
   - ps: Write-Host $env:PATH
   - ps: gem install bundler --quiet --no-ri --no-rdoc
-  - ps: Invoke-WebRequest -Uri http://curl.haxx.se/ca/cacert.pem -OutFile c:\GitHub\link-chef\certs.pem
+  - ps: Invoke-WebRequest -Uri http://curl.haxx.se/ca/cacert.pem -OutFile c:\GitHub\chef-appveyor-ci\certs.pem
   - ps: ruby --version
   - ps: gem --version
   - ps: bundler --version
