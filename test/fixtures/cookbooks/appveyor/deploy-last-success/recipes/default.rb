@@ -1,3 +1,5 @@
+# http://www.appveyor.com/downloads/deployment-agent/latest/AppveyorDeploymentAgent.msi
+
 include_recipe 'iis::mod_aspnet45'
 
 appveyor_agent 'latest' do
@@ -5,9 +7,8 @@ appveyor_agent 'latest' do
   deployment_group 'web'
 end
 
-appveyor_deploy '1.0.269' do
+appveyor_deploy 'test-production' do
   api_token node['api_token']
-  environment_name node['environment_name']
-  project_slug node['project_slug']
-  account_name node['account_name']
+  project 'test'
+  account node['account']
 end

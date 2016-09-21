@@ -1,0 +1,35 @@
+driver:
+  name: proxy
+  host: localhost
+  reset_command: "exit 0"
+  port: <%= ENV["winrm_port"] %>
+  username: <%= ENV["winrm_user"] %>
+  password: <%= ENV["winrm_pass"] %>
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: windows-2012R2
+
+verifier:
+  name: inspec
+
+suites:
+  - name: appveyor-agent-latest
+    run_list:
+      - recipe[appveyor-agent-latest::default]
+    attributes:
+      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
+      project: <%= ENV['PROJECT'] %>
+      account: <%= ENV['ACCOUNT'] %>
+      api_token: <%= ENV['API_TOKEN'] %>
+  - name: appveyor-deploy-build-version
+    run_list:
+      - recipe[appveyor-deploy-latest::default]
+    attributes:
+      api_token: <%= ENV['API_TOKEN'] %>
+      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
+      project: <%= ENV['PROJECT'] %>
+      account: <%= ENV['ACCOUNT'] %>
+      buildversion: <%= ENV['BUILDVERSION'] %>
