@@ -3,13 +3,13 @@
 include_recipe 'iis::mod_aspnet45'
 
 appveyor_agent 'latest' do
-  access_key node['environment_access_key']
+  access_key node['appveyor']['environment_access_key']
   deployment_group 'web'
 end
 
-appveyor_deploy 'test-production' do
-  api_token node['api_token']
+appveyor_deploy 'latest' do
+  environment_name 'appveyor-test'
+  api_token node['appveyor']['api_token']
+  account node['appveyor']['account']
   project 'test'
-  account node['account']
-  buildversion 'latest'
 end
