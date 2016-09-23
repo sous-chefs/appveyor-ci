@@ -9,3 +9,6 @@ LineLength:
   Enabled: false
 RescueModifier:
   Enabled: false
+Metrics/MethodLength:
+  CountComments: false
+  Max: 12

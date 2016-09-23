@@ -24,7 +24,9 @@ property :deployment_group, required: true
 property :installer_url, String, default: lazy { "https://www.appveyor.com/downloads/deployment-agent/#{version}/AppveyorDeploymentAgent.msi" }
 property :install_path, String, default: lazy { 'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe' }
 
-action :create do
+default_action :install
+
+action :install do
   include_recipe 'windows'
 
   package 'AppveyorDeploymentAgent' do
