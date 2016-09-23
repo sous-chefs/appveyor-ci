@@ -6,7 +6,7 @@ description 'Installs AppVeyor Agent & Triggers Deployment'
 long_description 'Installs AppVeyor Agent & Triggers Deployment'
 issues_url 'https://github.com/damacus/chef-appveyor-ci/issues'
 source_url 'https://github.com/damacus/chef-appveyor-ci'
-version '0.1.2'
+version '0.1.3'
 
 depends 'windows'
 
