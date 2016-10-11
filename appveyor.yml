@@ -11,7 +11,7 @@ environment:
   user_password: Pass@word1
 
   matrix:
-  - ruby_version: "22"
+  - ruby_version: "23"
 
 clone_folder: c:\GitHub\chef-appveyor-ci
 clone_depth: 1
