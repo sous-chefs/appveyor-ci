@@ -5,10 +5,14 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: windows2012r2
+  - name: windows-2012r2sp1
     driver:
-      image_id: ami-1441c367
       instance_type: t2.medium
+      image_search:
+        name: "Windows_Server-2012-R2_RTM-English-64Bit-Base-*"
+
+verifier:
+  name: inspec
 
 suites:
   - name: appveyor-agent-3-12-0
@@ -21,12 +25,12 @@ suites:
       - recipe[appveyor-agent-latest::default]
     attributes:
       environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
-  - name: appveyor-deploy
-    run_list:
-      - recipe[appveyor-deploy::default]
-    attributes:
-      api_token: <%= ENV['API_TOKEN'] %>
-      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
-      environment_name: <%= ENV['ENV_NAME'] %>
-      project_slug: <%= ENV['PROJECT_SLUG'] %>
-      account_name: <%= ENV['ACCOUNT_NAME'] %>
+  # - name: appveyor-deploy
+  #   run_list:
+  #     - recipe[appveyor-deploy::default]
+  #   attributes:
+  #     api_token: <%= ENV['API_TOKEN'] %>
+  #     environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
+  #     environment_name: <%= ENV['ENV_NAME'] %>
+  #     project_slug: <%= ENV['PROJECT_SLUG'] %>
+  #     account_name: <%= ENV['ACCOUNT_NAME'] %>
