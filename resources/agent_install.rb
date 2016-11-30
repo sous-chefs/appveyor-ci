@@ -27,22 +27,9 @@ property :install_path, String, default: lazy { 'C:\\Program Files (x86)\\AppVey
 default_action :install
 
 action :install do
-  include_recipe 'windows'
-
   package 'AppveyorDeploymentAgent' do
     source installer_url
     installer_type :msi
-    options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{access_key}"
-  end
-
-  registry_key 'HKEY_LOCAL_MACHINE\\SOFTWARE\\AppVeyor\\DeploymentAgent' do
-    values [{
-      name: 'DeploymentGroup', type: :string, data: deployment_group
-    }]
-    action :create
-  end
-
-  service 'Appveyor.DeploymentAgent' do
-    action :restart
+    options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{access_key} DEPLOYMENT_GROUP=#{deployment_group}"
   end
 end
