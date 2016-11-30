@@ -26,8 +26,7 @@ install:
   - ps: ruby --version
   - ps: gem --version
   - ps: bundler --version
-  - ps: Get-ChildItem Env:environment_access_key
-
+  
 build_script:
   - bundle install
 
