@@ -11,7 +11,7 @@ environment:
   user_password: Pass@word1
 
   matrix:
-  - ruby_version: "22"
+  - ruby_version: "23"
 
 clone_folder: c:\GitHub\chef-appveyor-ci
 clone_depth: 1
@@ -26,10 +26,10 @@ install:
   - ps: ruby --version
   - ps: gem --version
   - ps: bundler --version
-
+  
 build_script:
   - bundle install
 
 test_script:
-  - bundle exec rake style 
+  - bundle exec rake style
   - bundle exec kitchen verify
