@@ -17,7 +17,6 @@
 # limitations under the License.
 #
 
-resource_name :appveyor_agent_install
 property :version,          String, name_property: true
 property :access_key,       String, required: true
 property :deployment_group, String, required: true
