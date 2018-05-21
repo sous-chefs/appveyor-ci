@@ -26,10 +26,10 @@ install:
   - ps: ruby --version
   - ps: gem --version
   - ps: bundler --version
-  
+
 build_script:
   - bundle install
 
 test_script:
-  - bundle exec rake style
-  - bundle exec kitchen verify
+  - chef exec delivery local all
+  - kitchen verify

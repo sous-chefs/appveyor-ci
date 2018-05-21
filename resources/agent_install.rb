@@ -17,19 +17,17 @@
 # limitations under the License.
 #
 
-resource_name :appveyor_agent
-property :version, String, name_property: true
-property :access_key, String, required: true
-property :deployment_group, required: true
-property :installer_url, String, default: lazy { "https://www.appveyor.com/downloads/deployment-agent/#{version}/AppveyorDeploymentAgent.msi" }
-property :install_path, String, default: lazy { 'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe' }
-
-default_action :install
+resource_name :appveyor_agent_install
+property :version,          String, name_property: true
+property :access_key,       String, required: true
+property :deployment_group, String, required: true
+property :installer_url,    String, default: lazy { "https://www.appveyor.com/downloads/deployment-agent/#{version}/AppveyorDeploymentAgent.msi" }
+property :install_path,     String, default: lazy { 'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe' }
 
 action :install do
-  package 'AppveyorDeploymentAgent' do
+  windows_package 'AppveyorDeploymentAgent' do
     source installer_url
     installer_type :msi
-    options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{access_key} DEPLOYMENT_GROUP=#{deployment_group}"
+    options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{new_resoruce.access_key} DEPLOYMENT_GROUP=#{new_resoruce.deployment_group}"
   end
 end

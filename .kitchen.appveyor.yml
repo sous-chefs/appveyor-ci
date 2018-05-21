@@ -16,13 +16,9 @@ verifier:
   name: inspec
 
 suites:
-  - name: appveyor-agent-3-12-0
+  - name: test
     run_list:
-      - recipe[appveyor-agent-3-12-0::default]
-    attributes:
-      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
-  - name: appveyor-agent-latest
+      - recipe[test::latest]
+  - name: test
     run_list:
-      - recipe[appveyor-agent-latest::default]
-    attributes:
-      environment_access_key: <%= ENV['ENVIRONMENT_ACCESS_KEY'] %>
+      - recipe[test::specified_version]
