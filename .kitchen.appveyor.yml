@@ -5,6 +5,3 @@ driver:
   port: <%= ENV["winrm_port"] %>
   username: <%= ENV["winrm_user"] %>
   password: <%= ENV["winrm_pass"] %>
-
-platforms:
-  - name: windows-2012R2
