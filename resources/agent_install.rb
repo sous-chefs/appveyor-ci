@@ -31,6 +31,6 @@ action :install do
   windows_package 'AppveyorDeploymentAgent' do
     source new_resource.installer_url
     installer_type :msi
-    options deployment_group
+    options install_options
   end
 end
