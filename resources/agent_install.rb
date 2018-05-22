@@ -25,10 +25,9 @@ property :installer_url,    String, default: lazy { "https://www.appveyor.com/do
 property :install_path,     String, default: lazy { 'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe' }
 
 action :install do
-
   install_options = "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{new_resource.access_key} "
   install_options << "DEPLOYMENT_GROUP=#{new_resource.deployment_group}" if new_resource.deployment_group
-  
+
   windows_package 'AppveyorDeploymentAgent' do
     source new_resource.installer_url
     installer_type :msi
