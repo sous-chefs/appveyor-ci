@@ -1,23 +1,24 @@
 driver:
-  name: ec2
+  name: vagrant
 
 provisioner:
   name: chef_zero
-
-platforms:
-  - name: windows-2012r2sp1
-    driver:
-      instance_type: t2.medium
-      image_search:
-        name: "Windows_Server-2012-R2_RTM-English-64Bit-Base-*"
+  product_name: chef
+  product_version: <%= ENV['CHEF_VERSION'] || 'latest' %>
+  install_strategy: once
 
 verifier:
   name: inspec
 
+platforms:
+  - name: windows-2012R2
+
 suites:
-  - name: test
+  - name: latest
     run_list:
       - recipe[test::latest]
-  - name: test
+    attributes:
+      environment_access_key: ENV['environment_access_key']
+  - name: specified_version
     run_list:
       - recipe[test::specified_version]

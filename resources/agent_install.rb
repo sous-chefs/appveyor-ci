@@ -16,18 +16,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+provides :appveyor_agent
 
-resource_name :appveyor_agent_install
 property :version,          String, name_property: true
 property :access_key,       String, required: true
-property :deployment_group, String, required: true
+property :deployment_group, String
 property :installer_url,    String, default: lazy { "https://www.appveyor.com/downloads/deployment-agent/#{version}/AppveyorDeploymentAgent.msi" }
 property :install_path,     String, default: lazy { 'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe' }
 
 action :install do
+  install_options = "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{new_resource.access_key} "
+  install_options << "DEPLOYMENT_GROUP=#{new_resource.deployment_group}" if new_resource.deployment_group
+
   windows_package 'AppveyorDeploymentAgent' do
-    source installer_url
+    source new_resource.installer_url
     installer_type :msi
-    options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{new_resoruce.access_key} DEPLOYMENT_GROUP=#{new_resoruce.deployment_group}"
+    options install_options
   end
 end

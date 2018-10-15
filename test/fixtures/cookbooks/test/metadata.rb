@@ -1,4 +1,4 @@
-name 'appveyor-agent-3-12-0'
+name 'test'
 version '0.0.1'
 
 depends 'appveyor-ci'
