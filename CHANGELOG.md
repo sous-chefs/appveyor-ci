@@ -4,6 +4,10 @@ This file is used to list changes made in each version of the Appveyor-api cookb
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+- resolved cookstyle error: resources/agent_install.rb:20:1 warning: `ChefDeprecations/ResourceUsesOnlyResourceName`
+
 ## [0.2.0] - 2018-05-21
 ### Changed
 - Move to the Sous-Chefs organization
