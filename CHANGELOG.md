@@ -3,6 +3,10 @@
 This file is used to list changes made in each version of the Appveyor-api cookbook.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## UNRELEASED
+
+- Add a resource_name in addition to provides in the resource
+
 ## 0.2.1 - 2020-06-02
 
 - resolved cookstyle error: resources/agent_install.rb:20:1 warning: `ChefDeprecations/ResourceUsesOnlyResourceName`
