@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## UNRELEASED
 
+- resolved cookstyle error: resources/agent_install.rb:1:1 refactor: `Chef/Deprecations/ResourceWithoutUnifiedTrue`
 - Add a resource_name in addition to provides in the resource
 - Fix nodoc option for gem
 
