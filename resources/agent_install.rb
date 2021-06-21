@@ -19,6 +19,7 @@
 
 resource_name :appveyor_agent_install
 provides :appveyor_agent_install
+unified_mode true
 
 property :version,          String, name_property: true
 property :access_key,       String, required: true
