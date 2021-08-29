@@ -3,7 +3,7 @@
 This file is used to list changes made in each version of the Appveyor-api cookbook.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## UNRELEASED
+## 0.2.2 - *2021-08-29*
 
 - Standardise files with files in sous-chefs/repo-management
 - Add a `resource_name` in addition to provides in the resource
