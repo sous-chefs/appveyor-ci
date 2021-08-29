@@ -5,10 +5,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## UNRELEASED
 
-Standardise files with files in sous-chefs/repo-management
-
-- Add a resource_name in addition to provides in the resource
-- Fix nodoc option for gem
+- Standardise files with files in sous-chefs/repo-management
+- Add a `resource_name` in addition to provides in the resource
+- Fix `nodoc` option for gem
 
 ## 0.2.1 - 2020-06-02
 
