@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+- Update workflows to 2.0.1
+- Remove mdl and replace with markdownlint-cli2
 - Remove delivery folder
 
 ## 0.2.2 - *2021-08-29*
