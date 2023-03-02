@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+- Add workflows
+
 ## 0.2.3 - *2023-03-01*
 
 - Update workflows to 2.0.1
