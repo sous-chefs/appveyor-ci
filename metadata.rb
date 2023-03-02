@@ -5,7 +5,7 @@ license          'Apache-2.0'
 description      'Installs AppVeyor Agent & Triggers Deployment'
 issues_url       'https://github.com/sous-chefs/chef-appveyor-ci/issues'
 source_url       'https://github.com/sous-chefs/chef-appveyor-ci'
-version          '0.2.3'
+version          '0.2.4'
 chef_version     '>= 13.0'
 
 supports 'windows'
