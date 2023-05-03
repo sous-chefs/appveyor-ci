@@ -3,7 +3,7 @@
 This file is used to list changes made in each version of the Appveyor-api cookbook.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 0.2.5 - *2023-05-03*
 
 ## 0.2.4 - *2023-03-02*
 
