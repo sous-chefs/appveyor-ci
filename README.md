@@ -40,7 +40,7 @@ node['environment_access_key']
 node['deployment_group']
 ```
 
-For more examples see the test/fixtures directory 
+For more examples see the test/fixtures directory
 
 ## Resources
 
