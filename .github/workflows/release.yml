@@ -1,7 +1,6 @@
 ---
 name: release
 
-
 "on":
   push:
     branches: [main]
@@ -15,7 +14,7 @@ permissions:
   id-token: write
 
 jobs:
-  release:
+  release-cookbook:
     uses: sous-chefs/.github/.github/workflows/release-cookbook.yml@main
     secrets:
       token: ${{ secrets.PORTER_GITHUB_TOKEN }}
