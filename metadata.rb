@@ -6,6 +6,6 @@ description      'Installs AppVeyor Agent & Triggers Deployment'
 issues_url       'https://github.com/sous-chefs/appveyor-ci/issues'
 source_url       'https://github.com/sous-chefs/appveyor-ci'
 version          '0.2.11'
-chef_version     '>= 13.0'
+chef_version     '>= 15.3'
 
 supports 'windows'

@@ -1,0 +1,29 @@
+---
+verifier:
+  name: inspec
+
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+  versioned: &versioned_run_list
+    - recipe[test::versioned]
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
+  versioned: &versioned_verifier
+    inspec_tests:
+      - path: test/integration/versioned
+
+platforms:
+  - name: windows-latest
+
+suites:
+  - name: default
+    run_list: *default_run_list
+    verifier: *default_verifier
+
+  - name: versioned
+    run_list: *versioned_run_list
+    verifier: *versioned_verifier
