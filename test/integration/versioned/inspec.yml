@@ -1,0 +1,7 @@
+---
+name: versioned
+title: Versioned AppVeyor agent tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies a pinned AppVeyor agent installation
+version: 1.0.0

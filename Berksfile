@@ -1,5 +1,5 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'test', path: 'test/fixtures/cookbooks/test'
+cookbook 'test', path: 'test/cookbooks/test'
 
 metadata

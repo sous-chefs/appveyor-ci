@@ -1,7 +1,3 @@
 ---
 driver: { name: exec }
 transport: { name: exec }
-
-platforms:
-  - name: macos-latest
-  - name: windows-latest

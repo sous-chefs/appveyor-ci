@@ -7,10 +7,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.2.11](https://github.com/sous-chefs/appveyor-ci/compare/0.2.10...v0.2.11) (2025-10-14)
 
-
 ### Bug Fixes
 
-* **ci:** Update release workflow ([#71](https://github.com/sous-chefs/appveyor-ci/issues/71)) ([660220a](https://github.com/sous-chefs/appveyor-ci/commit/660220afd12867b079ac635db7b770888af3d0e9))
+- **ci:** Update release workflow ([#71](https://github.com/sous-chefs/appveyor-ci/issues/71)) ([660220a](https://github.com/sous-chefs/appveyor-ci/commit/660220afd12867b079ac635db7b770888af3d0e9))
 
 ## 0.2.10 - *2025-09-04*
 
