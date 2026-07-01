@@ -4,20 +4,24 @@ Installs the AppVeyor deployment agent MSI on Windows hosts.
 
 ## Actions
 
-| Action | Description |
-|--------|-------------|
+<!-- markdownlint-disable MD060 -->
+
+| Action     | Description                                      |
+| ---------- | ------------------------------------------------ |
 | `:install` | Installs the AppVeyor deployment agent (default). |
 
 ## Properties
 
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `version` | String | name property | AppVeyor deployment agent version to install. |
-| `access_key` | String | `nil` | Deployment access key used by the agent. |
-| `environment_access_key` | String | `nil` | Alias for `access_key` for compatibility with existing examples. |
-| `deployment_group` | String | required | AppVeyor deployment group name. |
-| `installer_url` | String | derived from `version` | Custom MSI download URL. |
-| `install_path` | String | `'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe'` | Expected installation path. |
+| Property                 | Type   | Default                                                                                         | Description                                                           |
+| ------------------------ | ------ | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `version`                | String | name property                                                                                   | AppVeyor deployment agent version to install.                         |
+| `access_key`             | String | `nil`                                                                                           | Deployment access key used by the agent.                              |
+| `environment_access_key` | String | `nil`                                                                                           | Alias for `access_key` for compatibility with existing examples.      |
+| `deployment_group`       | String | required                                                                                        | AppVeyor deployment group name.                                       |
+| `installer_url`          | String | derived from `version`                                                                          | Custom MSI download URL.                                              |
+| `install_path`           | String | `'C:\\Program Files (x86)\\AppVeyor\\DeploymentAgent\\Appveyor.DeploymentAgent.Service.exe'` | Expected installation path.                                           |
+
+<!-- markdownlint-enable MD060 -->
 
 ## Examples
 
