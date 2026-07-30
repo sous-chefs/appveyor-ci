@@ -1,3 +1,35 @@
 ---
-driver: { name: exec }
-transport: { name: exec }
+driver:
+  name: exec
+
+transport:
+  name: exec
+
+provisioner:
+  name: chef_infra
+  chef_omnibus_install: false
+  chef_license: accept
+  multiple_converge: 2
+  enforce_idempotency: true
+  deprecations_as_errors: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: windows-latest
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test::default]
+    verifier:
+      inspec_tests:
+        - path: test/integration/default
+
+  - name: versioned
+    run_list:
+      - recipe[test::versioned]
+    verifier:
+      inspec_tests:
+        - path: test/integration/versioned

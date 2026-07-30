@@ -21,30 +21,15 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Chef
 
-- Chef 12.5+
+- Chef Infra Client 15.3+
 
 ## Platform
 
 - Windows
 
-## Recipes
-
-### default  
-
-Installs the AppVeyor agent
-
-Set the following attributes:
-
-```ruby
-node['environment_access_key']
-node['deployment_group']
-```
-
-For more examples see the test/fixtures directory
-
 ## Resources
 
-### Agent Install
+### `appveyor_agent`
 
 ```ruby
 appveyor_agent '3.12.0' do
@@ -53,18 +38,18 @@ appveyor_agent '3.12.0' do
 end
 ```
 
-### Deploy
-
-`appveyor_deploy` start the deployment for the specified environment in AppVeyor
+Remove the deployment agent with:
 
 ```ruby
-appveyor_deploy '1.0.269' do
-  api_token node['api_token']
-  environment_name 'development'
-  project_slug 'project-X'
-  account_name 'my-account'
+appveyor_agent 'latest' do
+  access_key '1234abcd890432kj'
+  deployment_group 'test'
+  action :remove
 end
 ```
+
+See [the resource reference](documentation/appveyor-ci_appveyor_agent.md) and
+[the migration guide](migration.md) for the complete API.
 
 ## Contributors
 

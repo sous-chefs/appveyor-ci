@@ -6,9 +6,10 @@ Installs the AppVeyor deployment agent MSI on Windows hosts.
 
 <!-- markdownlint-disable MD060 -->
 
-| Action     | Description                                      |
-| ---------- | ------------------------------------------------ |
-| `:install` | Installs the AppVeyor deployment agent (default). |
+| Action     | Description                                           |
+| ---------- | ----------------------------------------------------- |
+| `:install` | Installs the AppVeyor deployment agent (default).    |
+| `:remove`  | Uninstalls the AppVeyor deployment agent MSI package. |
 
 ## Properties
 
