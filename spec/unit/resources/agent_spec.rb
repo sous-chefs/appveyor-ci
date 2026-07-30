@@ -38,4 +38,16 @@ describe 'appveyor_agent' do
       )
     end
   end
+
+  context 'with action :remove' do
+    recipe do
+      appveyor_agent 'latest' do
+        access_key 'abc123'
+        deployment_group 'test'
+        action :remove
+      end
+    end
+
+    it { is_expected.to remove_windows_package('AppveyorDeploymentAgent') }
+  end
 end

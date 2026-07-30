@@ -28,3 +28,9 @@ action :install do
     options "/quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY=#{resolved_access_key} DEPLOYMENT_GROUP=#{new_resource.deployment_group}"
   end
 end
+
+action :remove do
+  windows_package 'AppveyorDeploymentAgent' do
+    action :remove
+  end
+end
