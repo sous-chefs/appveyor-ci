@@ -3,7 +3,16 @@
 This file is used to list changes made in each version of the Appveyor-api cookbook.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [1.0.0](https://github.com/sous-chefs/appveyor-ci/compare/v0.2.12...v1.0.0) (2026-08-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate appveyor-ci to custom resources ([#69](https://github.com/sous-chefs/appveyor-ci/issues/69))
+
+### Features
+
+* migrate appveyor-ci to custom resources ([#69](https://github.com/sous-chefs/appveyor-ci/issues/69)) ([e2bd078](https://github.com/sous-chefs/appveyor-ci/commit/e2bd0789d5e2d33962490d44970272ba2b160274))
 
 ## [0.2.12](https://github.com/sous-chefs/appveyor-ci/compare/v0.2.11...v0.2.12) (2026-03-22)
 
